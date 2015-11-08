@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cas_array_labels">
+        <item>milisekunda [ms]</item>
+        <item>sekunda [s]</item>
+        <item>minuta [min]</item>
+        <item>hodina [h]</item>
+        <item>den [d]</item>
+        <item>gregoriánský rok [r]</item>
+    </string-array>
+
+    <string-array name="cas_array_values">
+        <item>0.001</item>
+        <item>1</item>
+        <item>60</item>
+        <item>3600</item>
+        <item>86400</item>
+        <item>31556952</item>
+    </string-array>
+
+    <string-array name="delka_array_labels">
+        <item>milimetr [mm]</item>
+        <item>centimetr [cm]</item>
+        <item>decimetr [dm]</item>
+        <item>metr [m]</item>
+        <item>kilometr [km]</item>
+        <item>míle [mi.]</item>
+        <item>námořní míle [n. m.]</item>
+        <item>yard [yd.]</item>
+        <item>stopa [ft.]</item>
+        <item>astronomická jednotka [AU]</item>
+        <item>světelný rok [ly]</item>
+        <item>parsek [pc]</item>
+    </string-array>
+
+    <string-array name="delka_array_values">
+        <item>0.001</item>
+        <item>0.01</item>
+        <item>0.1</item>
+        <item>1</item>
+        <item>1000</item>
+        <item>1609</item>
+        <item>1852</item>
+        <item>0.914</item>
+        <item>0.305</item>
+        <item>149600000000</item>
+        <item>946000000000000</item>
+        <item>3086000000000000</item>
+    </string-array>
+
+    <string-array name="objem_array_labels">
+        <item>krychlový centrimetr [cm3]</item>
+        <item>mililitr [ml]</item>
+        <item>krychlový decimetr [dm3]</item>
+        <item>litr [l]</item>
+        <item>krychlový metr [m3]</item>
+        <item>krychlový kilometr [km3]</item>
+    </string-array>
+
+    <string-array name="objem_array_values">
+        <item>0.000001</item>
+        <item>0.000001</item>
+        <item>0.001</item>
+        <item>0.001</item>
+        <item>1</item>
+        <item>1000000000</item>
+    </string-array>
+
+    <string-array name="obsah_array_labels">
+        <item>čtvereční milimetr[mm2]</item>
+        <item>čtvereční centimetr [cm2]</item>
+        <item>čtvereční decimetr [dm2]</item>
+        <item>čtvereční metr [m2]</item>
+        <item>hektar [ha]</item>
+        <item>ar [a]</item>
+    </string-array>
+
+    <string-array name="obsah_array_values">
+        <item>0.000001</item>
+        <item>0.0001</item>
+        <item>0.01</item>
+        <item>1</item>
+        <item>10000</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="prace_array_labels">
+        <item>joule [J]</item>
+        <item>kalorie [cal]</item>
+        <item>elektronvolt [eV]</item>
+        <item>watthodina [Wh]</item>
+    </string-array>
+
+    <string-array name="prace_array_values">
+        <item>1</item>
+        <item>4.187</item>
+        <item>0.0000000000000000001602</item>
+        <item>3600000</item>
+    </string-array>
+
+    <string-array name="rychlost_array_labels">
+        <item>metr za sekundu [m/s]</item>
+        <item>kilometr za sekundu [km/s]</item>
+        <item>kilometr za hodinu [km/h]</item>
+    </string-array>
+
+    <string-array name="rychlost_array_values">
+        <item>1</item>
+        <item>1000</item>
+        <item>0.278</item>
+    </string-array>
+
+    <string-array name="teplota_array_labels">
+        <item>kelvin [K]</item>
+        <item>stupeň Celsia [°C]</item>
+        <item>stupeň Fahrenheita [°F]</item>
+    </string-array>
+
+    <string-array name="teplota_array_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="tlak_array_labels">
+        <item>pascal [Pa]</item>
+        <item>bar [bar]</item>
+        <item>fyzikální atmosféra [atm]</item>
+    </string-array>
+
+    <string-array name="tlak_array_values">
+        <item>1</item>
+        <item>100000</item>
+        <item>101325</item>
+    </string-array>
+
+    <string-array name="vykon_array_labels">
+        <item>watt [W]</item>
+        <item>kilowatt [kW]</item>
+        <item>koňská síla [HP]</item>
+    </string-array>
+
+    <string-array name="vykon_array_values">
+        <item>1</item>
+        <item>1000</item>
+        <item>745.7</item>
+    </string-array>
+
+
+</resources>

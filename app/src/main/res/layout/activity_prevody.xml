@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="eu.honzaik.fyzikaproandroid.PrevodActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/prevody_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/activity_toolbar_elevation"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        </android.support.v7.widget.Toolbar>
+
+        <ExpandableListView
+            android:id="@+id/prevody_elv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

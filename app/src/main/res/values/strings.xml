@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fyzika pro Android</string>
+
+    <!-- menu -->
+    <string name="main_activity_menu_first">Převod jednotek</string>
+    <string name="main_activity_menu_second">Pohyb tělesa</string>
+
+</resources>

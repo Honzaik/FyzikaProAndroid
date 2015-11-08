@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/vinova</item>
+        <item name="colorPrimaryDark">@color/seda</item>
+        <item name="colorAccent">@color/zelena2</item>
+        <item name="android:textColorPrimary">@color/bezova</item>
+
+    </style>
+
+</resources>

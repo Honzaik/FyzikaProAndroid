@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eu.honzaik.fyzikaproandroid.layouts.PrevodnikLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/prevodnik_layout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="4">
+
+
+    <EditText
+        android:id="@+id/prevodnik_zadani_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:layout_weight="1.5"/>
+
+    <Spinner
+        android:id="@+id/prevodnik_zadani_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"/>
+
+    <TextView
+        android:id="@+id/prevodnik_vysledek_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="1.5"/>
+    <Spinner
+        android:id="@+id/prevodnik_vysledek_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"/>
+</eu.honzaik.fyzikaproandroid.layouts.PrevodnikLayout>
