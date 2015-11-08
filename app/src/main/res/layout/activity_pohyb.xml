@@ -20,5 +20,29 @@
             android:elevation="@dimen/activity_toolbar_elevation"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
         </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@color/seda">
+
+            <eu.honzaik.fyzikaproandroid.CustomCanvasView
+                android:id="@+id/pohyb_activity_custom_canvas_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+            </eu.honzaik.fyzikaproandroid.CustomCanvasView>
+
+        </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:id="@+id/pohyb_activity_start_button" />
+
+
     </LinearLayout>
 </ScrollView>
