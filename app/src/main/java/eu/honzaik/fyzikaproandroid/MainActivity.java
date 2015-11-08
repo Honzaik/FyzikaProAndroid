@@ -1,6 +1,7 @@
 package eu.honzaik.fyzikaproandroid;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_activity_toolbar);
         setSupportActionBar(mainToolbar);
+        ActionBar ab = getSupportActionBar();
+        if(ab != null) ab.setDisplayHomeAsUpEnabled(true);
 
         menuButton1 = (Button) findViewById(R.id.main_activity_menu_button_first);
         menuButton2 = (Button) findViewById(R.id.main_activity_menu_button_second);
