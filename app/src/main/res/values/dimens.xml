@@ -7,4 +7,5 @@
     <dimen name="default_button_margin">5dp</dimen>
     <dimen name="main_activity_menu_button_height">80dp</dimen>
     <dimen name="main_activity_menu_text_size">30sp</dimen>
+    <dimen name="pohyb_activity_chart_height">300dp</dimen>
 </resources>

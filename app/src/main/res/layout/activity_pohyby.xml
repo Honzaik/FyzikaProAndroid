@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/main_activity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/activity_toolbar_elevation"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+        <Button
+            android:id="@+id/pohyby_activity_button_rovnomerny"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_rovnomerny"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
+        <Button
+            android:id="@+id/pohyby_activity_button_zrychleny"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_zrychleny"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
+
+        <Button
+            android:id="@+id/pohyby_activity_button_zpomaleny"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_zpomaleny"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
+
+    </LinearLayout>
+
+
+</ScrollView>

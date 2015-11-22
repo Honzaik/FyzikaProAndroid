@@ -19,9 +19,25 @@
             android:name=".PrevodActivity"
             android:parentActivityName=".MainActivity" >
         </activity>
+
         <activity
-            android:name=".PohybActivity"
+            android:name=".PohybyActivity"
             android:parentActivityName=".MainActivity" >
+        </activity>
+
+        <activity
+            android:name=".RovnomernyPohybActivity"
+            android:parentActivityName=".PohybyActivity" >
+        </activity>
+
+        <activity
+            android:name=".ZrychlenyPohybActivity"
+            android:parentActivityName=".PohybyActivity" >
+        </activity>
+
+        <activity
+            android:name=".ZpomalenyPohybActivity"
+            android:parentActivityName=".PohybyActivity" >
         </activity>
     </application>
 

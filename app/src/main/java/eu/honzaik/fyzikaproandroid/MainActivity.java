@@ -1,7 +1,6 @@
 package eu.honzaik.fyzikaproandroid;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         menuButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PohybActivity.class);
+                Intent intent = new Intent(MainActivity.this, PohybyActivity.class);
                 startActivity(intent);
             }
         });
