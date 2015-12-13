@@ -10,6 +10,8 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 
+import eu.honzaik.fyzikaproandroid.R;
+
 public class CustomLineChart extends LineChart {
 
     private static final int BACKGROUND_COLOR = Color.LTGRAY;
@@ -22,24 +24,14 @@ public class CustomLineChart extends LineChart {
         this.setTouchEnabled(true);
         this.setScaleEnabled(true);
         this.setAutoScaleMinMaxEnabled(true);
+        this.setHardwareAccelerationEnabled(true);
+        this.setMarkerView(new CustomMarkerView(context, R.layout.custom_marker_view_layout));
 
         XAxis xAxis = this.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setValueFormatter(new CustomXAxisValueFormatter("s"));
 
         this.getAxisRight().setEnabled(false);
     }
 }
-
-        /*chartRychlost.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
-            @Override
-            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-                Log.d("FYS", "value: " + e.getVal() + " | index: " + dataSetIndex);
-            }
-
-            @Override
-            public void onNothingSelected() {
-
-            }
-        });
-        */

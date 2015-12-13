@@ -9,13 +9,11 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import eu.honzaik.fyzikaproandroid.CustomCanvasView;
-import eu.honzaik.fyzikaproandroid.R;
 import eu.honzaik.fyzikaproandroid.other.CustomLineChart;
-import eu.honzaik.fyzikaproandroid.other.RovnomernyPohyb;
+import eu.honzaik.fyzikaproandroid.other.CustomYAxisValueFormatter;
 import eu.honzaik.fyzikaproandroid.other.ZrychlenyPohyb;
 
-public class ZrychlenyPohybActivity extends AppCompatActivity {
+public class ZrychlenyPohybActivity extends PohybActivity {
 
     private CustomCanvasView customCanvas;
     private Button startButton;
@@ -38,10 +36,10 @@ public class ZrychlenyPohybActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zrychleny_pohyb);
-        this.overridePendingTransition(R.anim.from_right, R.anim.from_left);
 
         Toolbar pohybToolbar = (Toolbar) findViewById(R.id.zrychleny_pohyb_activity_toolbar);
         setSupportActionBar(pohybToolbar);
+
         ActionBar ab = getSupportActionBar();
         if(ab != null) ab.setDisplayHomeAsUpEnabled(true);
 
@@ -97,12 +95,15 @@ public class ZrychlenyPohybActivity extends AppCompatActivity {
 
         chartRychlost = (CustomLineChart) findViewById(R.id.zrychleny_pohyb_activity_chart_rychlost);
         chartRychlost.setDescription("Graf rychlosti na čase");
+        chartRychlost.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m/s"));
 
         chartDraha = (CustomLineChart) findViewById(R.id.zrychleny_pohyb_activity_chart_draha);
         chartDraha.setDescription("Graf dráhy na čase");
+        chartDraha.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m"));
 
         chartZrychleni = (CustomLineChart) findViewById(R.id.zrychleny_pohyb_activity_chart_zrychleni);
         chartZrychleni.setDescription("Graf zrychlení na čase");
+        chartZrychleni.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m/s^2"));
 
         startButton = (Button) findViewById(R.id.zrychleny_pohyb_activity_start_button);
         startButton.setOnClickListener(new View.OnClickListener() {

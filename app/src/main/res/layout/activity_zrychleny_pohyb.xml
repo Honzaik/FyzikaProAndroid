@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="Počáteční rychlost"
+                android:text="@string/pohyb_activity_pocatecni_rychlost"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
                 />
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="Čas"
+                android:text="@string/pohyb_activity_cas"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
                 />
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="Zrychlení"
+                android:text="@string/pohyb_activity_zrychleni"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
                 />

@@ -10,10 +10,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import eu.honzaik.fyzikaproandroid.other.CustomLineChart;
+import eu.honzaik.fyzikaproandroid.other.CustomYAxisValueFormatter;
 import eu.honzaik.fyzikaproandroid.other.ZpomalenyPohyb;
-import eu.honzaik.fyzikaproandroid.other.ZrychlenyPohyb;
 
-public class ZpomalenyPohybActivity extends AppCompatActivity {
+public class ZpomalenyPohybActivity extends PohybActivity {
 
     private CustomCanvasView customCanvas;
     private Button startButton;
@@ -32,11 +32,11 @@ public class ZpomalenyPohybActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zrychleny_pohyb);
-        this.overridePendingTransition(R.anim.from_right, R.anim.to_left);
+        setContentView(R.layout.activity_zpomaleny_pohyb);
 
-        Toolbar pohybToolbar = (Toolbar) findViewById(R.id.zrychleny_pohyb_activity_toolbar);
+        Toolbar pohybToolbar = (Toolbar) findViewById(R.id.zpomaleny_pohyb_activity_toolbar);
         setSupportActionBar(pohybToolbar);
+
         ActionBar ab = getSupportActionBar();
         if(ab != null) ab.setDisplayHomeAsUpEnabled(true);
 
@@ -64,7 +64,7 @@ public class ZpomalenyPohybActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 zrychleniValueTextView.setText(String.valueOf(progress * (-1)));
-                zrychleni = progress * (-1);
+                zrychleni = progress;
             }
 
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -74,15 +74,17 @@ public class ZpomalenyPohybActivity extends AppCompatActivity {
             }
         });
 
-
         chartRychlost = (CustomLineChart) findViewById(R.id.zpomaleny_pohyb_activity_chart_rychlost);
         chartRychlost.setDescription("Graf rychlosti na čase");
+        chartRychlost.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m/s"));
 
         chartDraha = (CustomLineChart) findViewById(R.id.zpomaleny_pohyb_activity_chart_draha);
         chartDraha.setDescription("Graf dráhy na čase");
+        chartDraha.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m"));
 
         chartZrychleni = (CustomLineChart) findViewById(R.id.zpomaleny_pohyb_activity_chart_zrychleni);
         chartZrychleni.setDescription("Graf zrychlení na čase");
+        chartZrychleni.getAxisLeft().setValueFormatter(new CustomYAxisValueFormatter("m/s^2"));
 
         startButton = (Button) findViewById(R.id.zpomaleny_pohyb_activity_start_button);
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -104,4 +106,5 @@ public class ZpomalenyPohybActivity extends AppCompatActivity {
             }
         });
     }
+
 }

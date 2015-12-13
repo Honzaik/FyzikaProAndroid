@@ -9,5 +9,10 @@
     <string name="pohyby_activity_menu_zrychleny">Rovnoměrně zrychlený</string>
     <string name="pohyby_activity_menu_zpomaleny">Rovnoměrně zpomalený</string>
 
+    <string name="pohyb_activity_start_button">Start simulace</string>
+    <string name="pohyb_activity_rychlost">Rychlost [m/s]</string>
+    <string name="pohyb_activity_pocatecni_rychlost">Počáteční rychlost [m/s]</string>
+    <string name="pohyb_activity_zrychleni">Zrychlení [m/s<sup><small>2</small></sup>]</string>
+    <string name="pohyb_activity_cas">Čas [s]</string>
 
 </resources>

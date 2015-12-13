@@ -59,7 +59,7 @@ public class ZpomalenyPohyb {
                 entry = new Entry(rychlost, i);
             }
             if(type == 1){
-                float draha = pocatecniRychlost * cas - 0.5f * zrychleni * (float) Math.pow(((float)i / (float)pocetIteraci) * cas, 2);
+                float draha = pocatecniRychlost * ((float)i / (float)pocetIteraci) * cas - 0.5f * zrychleni * (float) Math.pow(((float)i / (float)pocetIteraci) * cas, 2);
                 entry = new Entry(draha, i); //draha
             }
             if(type == 2) entry = new Entry(zrychleni, i); //zrychleni

@@ -6,4 +6,6 @@
     <color name="zelena2_tmavsi">#106D51</color>
     <color name="seda">#63535B</color>
     <color name="vinova">#6D1A36</color>
+    <color name="pruhledna">#00FFFFFF</color>
+    <color name="cerna">#000</color>
 </resources>
