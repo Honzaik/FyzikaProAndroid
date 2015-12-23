@@ -8,11 +8,16 @@
     <string name="pohyby_activity_menu_rovnomerny">Rovnoměrný</string>
     <string name="pohyby_activity_menu_zrychleny">Rovnoměrně zrychlený</string>
     <string name="pohyby_activity_menu_zpomaleny">Rovnoměrně zpomalený</string>
+    <string name="pohyby_activity_menu_svisly_vzhuru">Vrh svislý vzhůru</string>
+    <string name="pohyby_activity_menu_vodorovny">Vrh vodorovný</string>
+    <string name="pohyby_activity_menu_sikmy_vzhuru">Vrh šikmý vzhůru</string>
 
     <string name="pohyb_activity_start_button">Start simulace</string>
     <string name="pohyb_activity_rychlost">Rychlost [m/s]</string>
     <string name="pohyb_activity_pocatecni_rychlost">Počáteční rychlost [m/s]</string>
     <string name="pohyb_activity_zrychleni">Zrychlení [m/s<sup><small>2</small></sup>]</string>
     <string name="pohyb_activity_cas">Čas [s]</string>
+    <string name="pohyb_activity_vyska">Počáteční výška [m]</string>
+    <string name="pohyb_activity_uhel">Počáteční úhel [°]</string>
 
 </resources>

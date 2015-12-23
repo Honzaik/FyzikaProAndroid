@@ -14,6 +14,9 @@ public class PohybyActivity extends AppCompatActivity{
     private Button buttonRovnomerny;
     private Button buttonZrychleny;
     private Button buttonZpomaleny;
+    private Button buttonSvislyVzhuru;
+    private Button buttonVodorovny;
+    private Button buttonSikmyVzhuru;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class PohybyActivity extends AppCompatActivity{
         buttonRovnomerny = (Button) findViewById(R.id.pohyby_activity_button_rovnomerny);
         buttonZrychleny = (Button) findViewById(R.id.pohyby_activity_button_zrychleny);
         buttonZpomaleny = (Button) findViewById(R.id.pohyby_activity_button_zpomaleny);
+        buttonSvislyVzhuru = (Button) findViewById(R.id.pohyby_activity_button_svisly_vzhuru);
+        buttonVodorovny = (Button) findViewById(R.id.pohyby_activity_button_vodorovny);
+        buttonSikmyVzhuru = (Button) findViewById(R.id.pohyby_activity_button_sikmy_vzhuru);
+
 
         buttonRovnomerny.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,5 +62,30 @@ public class PohybyActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+
+        buttonSvislyVzhuru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PohybyActivity.this, SvislyVzhuruVrhActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonVodorovny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PohybyActivity.this, VodorovnyVrhActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonSikmyVzhuru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PohybyActivity.this, SikmyVzhuruVrhActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

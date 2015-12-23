@@ -49,12 +49,12 @@
     </string-array>
 
     <string-array name="objem_array_labels">
-        <item>krychlový centrimetr [cm3]</item>
+        <item>krychlový centrimetr [cm<sup><small>3</small></sup>]</item>
         <item>mililitr [ml]</item>
-        <item>krychlový decimetr [dm3]</item>
+        <item>krychlový decimetr [dm<sup><small>3</small></sup>]</item>
         <item>litr [l]</item>
-        <item>krychlový metr [m3]</item>
-        <item>krychlový kilometr [km3]</item>
+        <item>krychlový metr [m<sup><small>3</small></sup>]</item>
+        <item>krychlový kilometr [km<sup><small>3</small></sup>]</item>
     </string-array>
 
     <string-array name="objem_array_values">
@@ -67,10 +67,10 @@
     </string-array>
 
     <string-array name="obsah_array_labels">
-        <item>čtvereční milimetr[mm2]</item>
-        <item>čtvereční centimetr [cm2]</item>
-        <item>čtvereční decimetr [dm2]</item>
-        <item>čtvereční metr [m2]</item>
+        <item>čtvereční milimetr[mm<sup><small>2</small></sup>]</item>
+        <item>čtvereční centimetr [cm<sup><small>2</small></sup>]</item>
+        <item>čtvereční decimetr [dm<sup><small>2</small></sup>]</item>
+        <item>čtvereční metr [m<sup><small>2</small></sup>]</item>
         <item>hektar [ha]</item>
         <item>ar [a]</item>
     </string-array>

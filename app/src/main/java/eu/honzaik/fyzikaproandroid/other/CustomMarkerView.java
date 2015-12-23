@@ -12,15 +12,17 @@ import eu.honzaik.fyzikaproandroid.R;
 public class CustomMarkerView extends MarkerView{
 
     private TextView contentTextView;
+    private CustomLineChart chart;
 
-    public CustomMarkerView(Context context, int layoutResource) {
+    public CustomMarkerView(Context context, int layoutResource, CustomLineChart chart) {
         super(context, layoutResource);
+        this.chart = chart;
         contentTextView = (TextView) findViewById(R.id.custom_marker_text_view);
     }
 
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
-        contentTextView.setText("" + e.getVal());
+        contentTextView.setText(chart.getXValue(e.getXIndex()) + ", " + e.getVal());
     }
 
     @Override

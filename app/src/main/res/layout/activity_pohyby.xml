@@ -47,6 +47,33 @@
             android:textSize="@dimen/main_activity_menu_text_size"
             android:textColor="@color/bezova"
             android:background="@drawable/menu_button" />
+        <Button
+            android:id="@+id/pohyby_activity_button_svisly_vzhuru"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_svisly_vzhuru"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
+        <Button
+            android:id="@+id/pohyby_activity_button_vodorovny"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_vodorovny"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
+        <Button
+            android:id="@+id/pohyby_activity_button_sikmy_vzhuru"
+            android:layout_height="@dimen/main_activity_menu_button_height"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/default_button_margin"
+            android:text="@string/pohyby_activity_menu_sikmy_vzhuru"
+            android:textSize="@dimen/main_activity_menu_text_size"
+            android:textColor="@color/bezova"
+            android:background="@drawable/menu_button" />
 
     </LinearLayout>
 
