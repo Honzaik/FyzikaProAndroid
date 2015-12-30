@@ -1,6 +1,7 @@
 package eu.honzaik.fyzikaproandroid.other;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.components.MarkerView;
@@ -27,7 +28,16 @@ public class CustomMarkerView extends MarkerView{
 
     @Override
     public int getXOffset(float xpos) {
-        return -(getWidth() / 2);
+        int defaultXOffset = -(getWidth() / 2);
+        int chartW = chart.getWidth();
+        float chartOffsetLeft = chart.getViewPortHandler().contentLeft();
+        //float chartOffsetRight = chartW - chart.getViewPortHandler().contentRight();
+        float realXPos = xpos - chartOffsetLeft;
+        float realChartWidth = chart.getViewPortHandler().contentRight()- chartOffsetLeft;
+        float distanceFromCenter = realChartWidth/2 - realXPos;
+        float k = distanceFromCenter/(realChartWidth/-2);
+        float offset = (k+1)*defaultXOffset;
+        return (int) offset;
     }
 
     @Override
