@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import eu.honzaik.fyzikaproandroid.other.RovnomernyPohyb;
+
 public class PohybyActivity extends AppCompatActivity{
 
     private Button buttonRovnomerny;

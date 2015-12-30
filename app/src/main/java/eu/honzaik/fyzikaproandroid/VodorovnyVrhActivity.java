@@ -3,7 +3,9 @@ package eu.honzaik.fyzikaproandroid;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -28,6 +30,7 @@ public class VodorovnyVrhActivity extends PohybActivity {
     private float pocatecniRychlost;
     private float pocatecniVyska;
     private VodorovnyVrh vrh;
+    private float chartTrajektorieHeight = -1f;
 
 
     @Override
@@ -101,13 +104,25 @@ public class VodorovnyVrhActivity extends PohybActivity {
 
                 String maxS = trajektorieData.getXVals().get(trajektorieData.getXVals().size() - 1);
                 float maxX = Float.parseFloat(maxS);
-
-                if (trajektorieData.getYMax() < maxX) {
+                Log.d("FYS", "maxX: " + maxX + " maxY: " + trajektorieData.getYMax());
+                float chartW = chartTrajektorie.getViewPortHandler().getChartWidth();
+                float chartH = chartTrajektorie.getViewPortHandler().getChartHeight();
+                ViewGroup.LayoutParams params = chartTrajektorie.getLayoutParams();
+                if(chartTrajektorieHeight == -1f) chartTrajektorieHeight = params.height;
+                if (trajektorieData.getYMax() <= maxX) {
                     chartTrajektorie.getAxisLeft().setAxisMaxValue(maxX);
+                    chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartW);
+                    params.height = (int) chartTrajektorieHeight;
+                    chartTrajektorie.setLayoutParams(params);
+                }else{
+                    float pomer = (trajektorieData.getYMax() + 1) / maxX;
+                    chartTrajektorie.getAxisLeft().setAxisMaxValue(trajektorieData.getYMax() + 5);
+                    chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartH * pomer);
+                    Log.d("FYS", "w: "+ params.width + " h: " + params.height);
+                    params.height = (int) (chartTrajektorieHeight * pomer);
+                    chartTrajektorie.setLayoutParams(params);
                 }
 
-                float chartW = chartTrajektorie.getViewPortHandler().getChartWidth();
-                chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartW);
 
                 chartRychlost.invalidate();
                 chartTrajektorie.invalidate();

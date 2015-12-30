@@ -73,6 +73,10 @@ public class RovnomernyPohyb {
         LineDataSet set1 = new LineDataSet(YValues, name);
         set1.setDrawCircles(false); // bude to spojitej graf normalne
         set1.setDrawValues(false);
+        if(type == 0){
+            set1.setDrawFilled(true);
+            set1.setFillColor(COLOR1);
+        }
         if(type == 0) set1.setColor(COLOR0);
         if(type == 1) set1.setColor(COLOR1);
         if(type == 2) set1.setColor(COLOR2);

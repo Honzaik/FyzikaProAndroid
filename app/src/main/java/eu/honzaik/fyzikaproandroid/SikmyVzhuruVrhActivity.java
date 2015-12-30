@@ -4,9 +4,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -34,6 +37,7 @@ public class SikmyVzhuruVrhActivity extends PohybActivity {
     private float pocatecniRychlost;
     private float pocatecniUhel;
     private SikmyVzhuruVrh vrh;
+    private float chartTrajektorieHeight = -1f;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -112,13 +116,24 @@ public class SikmyVzhuruVrhActivity extends PohybActivity {
 
                 String maxS = trajektorieData.getXVals().get(trajektorieData.getXVals().size() - 1);
                 float maxX = Float.parseFloat(maxS);
-
-                if (trajektorieData.getYMax() < maxX) {
-                    chartTrajektorie.getAxisLeft().setAxisMaxValue(maxX);
-                }
-
+                Log.d("FYS", "maxX: " + maxX + " maxY: " + trajektorieData.getYMax());
                 float chartW = chartTrajektorie.getViewPortHandler().getChartWidth();
-                chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartW);
+                float chartH = chartTrajektorie.getViewPortHandler().getChartHeight();
+                ViewGroup.LayoutParams params = chartTrajektorie.getLayoutParams();
+                if(chartTrajektorieHeight == -1f) chartTrajektorieHeight = params.height;
+                if (trajektorieData.getYMax() <= maxX) {
+                    chartTrajektorie.getAxisLeft().setAxisMaxValue(maxX);
+                    chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartW);
+                    params.height = (int) chartTrajektorieHeight;
+                    chartTrajektorie.setLayoutParams(params);
+                }else{
+                    float pomer = (trajektorieData.getYMax() + 1) / maxX;
+                    chartTrajektorie.getAxisLeft().setAxisMaxValue(trajektorieData.getYMax() + 5);
+                    chartTrajektorie.getViewPortHandler().setChartDimens(chartW, chartH * pomer);
+                    Log.d("FYS", "w: "+ params.width + " h: " + params.height);
+                    params.height = (int) (chartTrajektorieHeight * pomer);
+                    chartTrajektorie.setLayoutParams(params);
+                }
 
                 chartRychlost.invalidate();
                 chartTrajektorie.invalidate();
@@ -129,48 +144,5 @@ public class SikmyVzhuruVrhActivity extends PohybActivity {
                 chartZrychleni.animateX(((int) vrh.getCelkovyCas()) * 1000);
             }
         });
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "SikmyVzhuruVrh Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://eu.honzaik.fyzikaproandroid/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "SikmyVzhuruVrh Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://eu.honzaik.fyzikaproandroid/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
     }
 }
