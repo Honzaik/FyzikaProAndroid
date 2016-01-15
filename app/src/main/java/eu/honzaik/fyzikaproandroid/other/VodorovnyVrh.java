@@ -20,7 +20,7 @@ public class VodorovnyVrh {
     private float zrychleni;
     private int type; // type = 0 - rychlost/celkovyCas; type = 1 - y/x (trajektorie); type = 2 - zrychleni/celkovyCas
     private static final float TIME_RESOLUTION = 0.01f; // 0.05 s
-    private static final float TIHOVE_ZRYCHLENI = 9.81f;
+    private static final float TIHOVE_ZRYCHLENI = 9.80665f;
     private static final int COLOR0 = Color.RED;
     private static final int COLOR1 = Color.BLUE;
     private static final int COLOR2 = Color.GREEN;

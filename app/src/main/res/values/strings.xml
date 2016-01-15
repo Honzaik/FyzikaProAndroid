@@ -18,6 +18,6 @@
     <string name="pohyb_activity_zrychleni">Zrychlení [m/s<sup><small>2</small></sup>]</string>
     <string name="pohyb_activity_cas">Čas [s]</string>
     <string name="pohyb_activity_vyska">Počáteční výška [m]</string>
-    <string name="pohyb_activity_uhel">Počáteční úhel [°]</string>
+    <string name="pohyb_activity_uhel">Elevační úhel [°]</string>
 
 </resources>
