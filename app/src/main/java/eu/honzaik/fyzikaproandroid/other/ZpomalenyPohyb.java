@@ -27,7 +27,6 @@ public class ZpomalenyPohyb {
         this.zrychleni = zrychleni;
         this.cas = pocatecniRychlost/zrychleni;
         this.draha = pocatecniRychlost * cas -  0.5f * zrychleni * (float) Math.pow(cas, 2);
-        Log.d("FYS", "pocatecniRychlost: " + pocatecniRychlost + " | cas: " + cas + " | draha: " + draha + " | zrychleni:" + zrychleni);
     }
 
     public LineData generateLineData(int type){
@@ -51,7 +50,6 @@ public class ZpomalenyPohyb {
     private ArrayList<Entry> generateYValues(int type){
         ArrayList<Entry> YValues = new ArrayList<Entry>();
         int pocetIteraci = (int) Math.ceil(cas/TIME_RESOLUTION);
-        Log.d("FYS", "pocetiteraci " + pocetIteraci);
         Entry entry = new Entry(0,0);
         for(int i = 0; i <= pocetIteraci; i++){
             if(type == 0){

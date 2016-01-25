@@ -30,7 +30,6 @@ public class VodorovnyVrh {
         this.pocatecniVyska = pocatecniVyska;
         this.zrychleni = TIHOVE_ZRYCHLENI;
         this.celkovyCas = (float) Math.sqrt((2 * pocatecniVyska) / zrychleni);
-        Log.d("FYS", "pocatecniRychlost: " + pocatecniRychlost + " | celkovyCas: " + celkovyCas + " | zrychleni:" + zrychleni + " | pocatecni vyska:" + pocatecniVyska);
     }
 
     public LineData generateLineData(int type){
@@ -75,7 +74,6 @@ public class VodorovnyVrh {
     private ArrayList<Entry> generateYValues(int type){
         ArrayList<Entry> YValues = new ArrayList<Entry>();
         int pocetIteraci = (int) Math.ceil(celkovyCas /TIME_RESOLUTION);
-        Log.d("FYS", "pocetiteraci " + pocetIteraci);
         float MAX_VYSKA = (float) (Math.pow(pocatecniRychlost, 2) / (2 * zrychleni));
         Entry entry = new Entry(0,0);
         for(int i = 0; i <= pocetIteraci; i++){

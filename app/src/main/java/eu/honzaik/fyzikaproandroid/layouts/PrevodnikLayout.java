@@ -162,7 +162,7 @@ public class PrevodnikLayout extends LinearLayout {
                 zadani = new BigDecimal(String.valueOf(zadaniEditText.getText()));
             }
         }catch(Exception e){
-            Log.d("FYS", e.getMessage());
+            //Log.d("FYS", e.getMessage());
         }
 
         BigDecimal vysledek = BigDecimal.ZERO;

@@ -75,7 +75,6 @@ public class SikmyVzhuruVrh {
     private ArrayList<Entry> generateYValues(int type){
         ArrayList<Entry> YValues = new ArrayList<Entry>();
         int pocetIteraci = (int) Math.ceil(celkovyCas /TIME_RESOLUTION);
-        Log.d("FYS", "pocetiteraci " + pocetIteraci);
         float MAX_VYSKA = (float) (Math.pow(pocatecniRychlost, 2) / (2 * zrychleni));
         Entry entry = new Entry(0,0);
         for(int i = 0; i <= pocetIteraci; i++){

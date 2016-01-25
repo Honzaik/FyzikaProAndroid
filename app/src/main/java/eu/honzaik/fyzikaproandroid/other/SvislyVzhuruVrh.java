@@ -27,7 +27,6 @@ public class SvislyVzhuruVrh {
         this.pocatecniRychlost = pocatecniRychlost;
         this.zrychleni = TIHOVE_ZRYCHLENI;
         this.celkovyCas = (pocatecniRychlost / zrychleni) * 2;
-        Log.d("FYS", "pocatecniRychlost: " + pocatecniRychlost + " | celkovyCas: " + celkovyCas + " | zrychleni:" + zrychleni);
     }
 
     public LineData generateLineData(int type){
@@ -62,7 +61,6 @@ public class SvislyVzhuruVrh {
     private ArrayList<Entry> generateYValues(int type){
         ArrayList<Entry> YValues = new ArrayList<Entry>();
         int pocetIteraci = (int) Math.ceil(celkovyCas /TIME_RESOLUTION);
-        Log.d("FYS", "pocetiteraci " + pocetIteraci);
         float MAX_VYSKA = (float) (Math.pow(pocatecniRychlost, 2) / (2 * zrychleni));
         Entry entry = new Entry(0,0);
         for(int i = 0; i <= pocetIteraci; i++){
@@ -74,7 +72,6 @@ public class SvislyVzhuruVrh {
                 float cas = ((float) i / (float) pocetIteraci) * celkovyCas;
                 float rychlost = pocatecniRychlost - zrychleni * cas;
                 float draha = 0;
-                Log.d("FYS", "rychlost " + rychlost);
                 if(rychlost > 0){  //letí vzhuru rychlost je kladná
                     draha = pocatecniRychlost * cas - 0.5f * zrychleni * (float) Math.pow(cas, 2);
                 }else if(rychlost == 0){ // maximální výška výstupu = rychlost bude v ten moment 0
