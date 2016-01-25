@@ -25,7 +25,6 @@ import eu.honzaik.fyzikaproandroid.other.VodorovnyVrh;
 
 public class SikmyVzhuruVrhActivity extends PohybActivity {
 
-    private CustomCanvasView customCanvas;
     private Button startButton;
     private CustomLineChart chartRychlost;
     private CustomLineChart chartTrajektorie;

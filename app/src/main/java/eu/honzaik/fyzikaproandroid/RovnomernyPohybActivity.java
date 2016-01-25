@@ -18,7 +18,6 @@ import eu.honzaik.fyzikaproandroid.other.RovnomernyPohyb;
 
 public class RovnomernyPohybActivity extends PohybActivity {
 
-    private CustomCanvasView customCanvas;
     private Button startButton;
     private CustomLineChart chartRychlost;
     private CustomLineChart chartDraha;

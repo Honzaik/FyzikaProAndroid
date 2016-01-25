@@ -15,7 +15,6 @@ import eu.honzaik.fyzikaproandroid.other.ZrychlenyPohyb;
 
 public class ZrychlenyPohybActivity extends PohybActivity {
 
-    private CustomCanvasView customCanvas;
     private Button startButton;
     private CustomLineChart chartRychlost;
     private CustomLineChart chartDraha;

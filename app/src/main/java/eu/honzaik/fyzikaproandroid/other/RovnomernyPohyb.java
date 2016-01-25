@@ -57,7 +57,7 @@ public class RovnomernyPohyb {
         Entry entry = new Entry(0,0);
         for(int i = 0; i <= pocetIteraci; i++){
             if(type == 0) entry = new Entry(rychlost, i); //rychlost
-            if(type == 1) entry = new Entry((rychlost/(1f/0.05f))*i, i); //draha
+            if(type == 1) entry = new Entry(rychlost * ((float)i / (float)pocetIteraci) * cas, i);
             if(type == 2) entry = new Entry(zrychleni, i); //zrychleni
             YValues.add(entry);
         }

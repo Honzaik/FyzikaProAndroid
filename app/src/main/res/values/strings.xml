@@ -3,7 +3,7 @@
 
     <!-- menu -->
     <string name="main_activity_menu_first">Převod jednotek</string>
-    <string name="main_activity_menu_second">Pohyb tělesa</string>
+    <string name="main_activity_menu_second">Pohyby tělesa</string>
 
     <string name="pohyby_activity_menu_rovnomerny">Rovnoměrný</string>
     <string name="pohyby_activity_menu_zrychleny">Rovnoměrně zrychlený</string>
