@@ -37,12 +37,6 @@ public class SikmyVzhuruVrhActivity extends PohybActivity {
     private float pocatecniUhel;
     private SikmyVzhuruVrh vrh;
     private float chartTrajektorieHeight = -1f;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

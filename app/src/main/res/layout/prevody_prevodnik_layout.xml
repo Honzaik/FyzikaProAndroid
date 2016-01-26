@@ -3,33 +3,41 @@
     android:id="@+id/prevodnik_layout"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/prevody_activity_prevodnik_height"
+    android:background="@color/vinova"
     android:weightSum="4">
-
 
     <EditText
         android:id="@+id/prevodnik_zadani_edit_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/prevody_activity_prevodnik_height"
+        android:paddingLeft="@dimen/prevody_activity_padding_left"
         android:inputType="numberSigned|numberDecimal"
-        android:ems="10"
+        android:background="#00000000"
+        android:textColor="@color/bezova"
+        android:ems="14"
+        android:textSize="@dimen/prevody_activity_text_size"
         android:layout_weight="1.5"/>
 
     <Spinner
         android:id="@+id/prevodnik_zadani_spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/prevody_activity_prevodnik_height"
         android:layout_weight="0.5"/>
 
     <TextView
         android:id="@+id/prevodnik_vysledek_text_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_height="@dimen/prevody_activity_prevodnik_height"
+        android:paddingLeft="@dimen/prevody_activity_padding_left"
+        android:textColor="@color/bezova"
+        android:ems="14"
+        android:textSize="@dimen/prevody_activity_text_size"
         android:layout_weight="1.5"/>
     <Spinner
         android:id="@+id/prevodnik_vysledek_spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"/>
+        android:layout_height="@dimen/prevody_activity_prevodnik_height"
+        android:layout_weight="0.5" />
+
 </eu.honzaik.fyzikaproandroid.layouts.PrevodnikLayout>
