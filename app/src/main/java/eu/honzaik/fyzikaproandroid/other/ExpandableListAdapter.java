@@ -2,10 +2,12 @@ package eu.honzaik.fyzikaproandroid.other;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -19,6 +21,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> headerTitles;
     private HashMap<String, Integer> childTitles;
+    private PrevodnikLayout[] layouts = new PrevodnikLayout[9];
+    private View[] views = new View[9];
 
     public ExpandableListAdapter(Context context, List<String> headerTitles, HashMap<String, Integer> childTitles){
         this.context = context;
@@ -28,12 +32,12 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+        View v = convertView;
         String headerTitle = (String) getGroup(groupPosition);
-        if(convertView == null) {
+        if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.prevody_list_group, null);
         }
-
         TextView headerTextView = (TextView) convertView.findViewById(R.id.prevody_list_group_text_view);
         headerTextView.setTypeface(null, Typeface.BOLD);
         headerTextView.setText(headerTitle);
@@ -43,14 +47,15 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         int layoutType = (Integer) getChild(groupPosition, childPosition);
-        if(convertView == null) {
+        if(views[layoutType] == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.prevody_prevodnik_layout, null);
+            views[layoutType] = inflater.inflate(R.layout.prevody_prevodnik_layout, null);
         }
-
-        PrevodnikLayout prevodnik = (PrevodnikLayout) convertView.findViewById(R.id.prevodnik_layout);
-        prevodnik.init(layoutType);
-        return convertView;
+        if(layouts[layoutType] == null){
+            layouts[layoutType] = (PrevodnikLayout) views[layoutType].findViewById(R.id.prevodnik_layout);
+            layouts[layoutType].init(layoutType);
+        }
+        return views[layoutType];
     }
 
     @Override
@@ -60,7 +65,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        //return this.childTitles.get(this.headerTitles.get(groupPosition)).;
         return 1;
     }
 
@@ -86,7 +90,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean hasStableIds() {
-        return false;
+        return true;
     }
 
     @Override

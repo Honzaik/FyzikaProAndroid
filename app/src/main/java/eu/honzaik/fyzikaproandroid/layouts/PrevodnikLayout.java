@@ -30,23 +30,14 @@ public class PrevodnikLayout extends LinearLayout {
     private double jednotkaVysledek = 1d;
     private int arrayValueNumber;
 
-    public PrevodnikLayout(Context context) {
-        super(context);
-        this.context = context;
-    }
-
     public PrevodnikLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
     }
 
-    public PrevodnikLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        this.context = context;
-    }
-
     public void init(int layoutType){
         this.layoutType = layoutType;
+
         zadaniEditText = (EditText) this.findViewById(R.id.prevodnik_zadani_edit_text);
         zadaniSpinner = (Spinner) this.findViewById(R.id.prevodnik_zadani_spinner);
         vysledekTextView = (TextView) this.findViewById(R.id.prevodnik_vysledek_text_view);
@@ -101,7 +92,7 @@ public class PrevodnikLayout extends LinearLayout {
         }
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, arrayLabelNumber, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, arrayLabelNumber, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         zadaniSpinner.setAdapter(adapter);
         vysledekSpinner.setAdapter(adapter);
